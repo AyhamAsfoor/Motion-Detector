@@ -43,11 +43,11 @@ def send_email():
     global motion_frame
 
     message = MIMEMultipart()
-    message["From"] = "motion.detector.v8@gmail.com"
-    message["To"] = "ayhamasfoor1@gmail.com"
+    message["From"] = "email"
+    message["To"] = "email;"
     message["Subject"] = "Motion Detection Alert"
 
-    message_body = MIMEText(f"Dear Ayham Asfoor,\nDay:Sunday\nDate:{date.today()}\nTime:{now.strftime('%H:%M:%S')}\n\nThis email is to inform you that motion has been detected in your monitored area.\nThe motion detection system captured an image of the motion and attached it to this email.\nPlease review the image to see what triggered the alarm.\n\nSincerely,\nMotion Detection System", "plain")
+    message_body = MIMEText(f"Dear NAME,\nDay:Sunday\nDate:{date.today()}\nTime:{now.strftime('%H:%M:%S')}\n\nThis email is to inform you that motion has been detected in your monitored area.\nThe motion detection system captured an image of the motion and attached it to this email.\nPlease review the image to see what triggered the alarm.\n\nSincerely,\nMotion Detection System", "plain")
     message.attach(message_body)
 
     if motion_frame is not None:
@@ -57,8 +57,8 @@ def send_email():
 
     with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
-        server.login("motion.detector.v8@gmail.com", "jvtv btad nvvx txnq")
-        server.sendmail("motion.detector.v8@gmail.com", "ayhamasfoor1@gmail.com", message.as_string())
+        server.login("email", "app_password_for_email")
+        server.sendmail("sender_email", "reciver_email", message.as_string())
 
     motion_frame = None
 
@@ -83,9 +83,9 @@ while True:
         else:
             if alarm_counter > 0:
                 alarm_counter -= 1
-        cv2.imshow("Computer Society", threshold)
+        cv2.imshow("name", threshold)
     else:
-        cv2.imshow("Computer Society", frame)
+        cv2.imshow("name", frame)
 
     if alarm_counter > 20:
         if not alarm:
