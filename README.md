@@ -14,13 +14,13 @@ Requirements
 **Technical Details**
 The motion detector uses the following techniques:
 
-**Video capture:**The system uses the OpenCV library to capture video frames from the webcam.
+**Video capture:** The system uses the OpenCV library to capture video frames from the webcam.
 **Grayscale conversion:** The system converts video frames to grayscale to reduce noise and simplify motion detection.
 **Thresholding:** The system applies a threshold to the grayscale images to detect motion.
 **Alarm:** The system triggers an alarm when motion is detected.
 **Email notification:** The system sends an email with an image of the motion when motion is detected.
 
-Future Work
+**Future Work**
 The motion detector could be improved in the following ways:
 
 **Object detection:** The system could be extended to detect objects in the video frames.
